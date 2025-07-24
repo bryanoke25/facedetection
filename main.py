@@ -32,6 +32,12 @@ while count <= 30:
             face_resize = cv2.resize(face, (width, height)) 
             cv2.imwrite(os.path.join (path, f"{count}.png"), face_resize)
             count += 1
+    cv2.imshow("opencv", img)
+    key = cv2.waitKey(10)
+    if key == 27:
+        break
+webcam.release()
+cv2.destroyAllWindows()
 
 
 
